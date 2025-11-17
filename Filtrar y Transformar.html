@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filtrar y transformar
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        
+        const FiltrarTrans = palabras => {
+            
+            palabras.filter(p => p.length > 4).map(p => p.toUpperCase());
+        
+            console.log(FiltrarTrans(["sol", "luna", "estrellas", "mar"]));
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Titulo</h1>
+</body>
+
+</html>

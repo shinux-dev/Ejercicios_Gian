@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar numeros</title>
+    <script>
+        const numeros = [5,12,18,7,3,25,10,30,2,15];
+        
+        const FiltrarMayor10 = (array) => {
+            return array.filter(num => num > 10);
+        };
+
+        const Resultado = FiltrarMayor10(numeros);
+        console.log("Array original:", numeros);
+        console.log("Números mayores a 10:", Resultado);
+
+
+
+    </script>
+</head>
+<body>
+<h1>Filtradora de numeros</h1>
+</body>
+</html>

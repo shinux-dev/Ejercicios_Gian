@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar SubCadena</title>
+
+    <script>
+        const ContienePalabra = (texto, palabra) => {
+            return texto.includes(palabra);
+        };
+
+        let frase = "Estoy aprendiendo lenguaje JavaScript";
+        
+
+        console.log(`Buscando "lenguaje":`, ContienePalabra(frase, "lenguaje")); 
+    
+        console.log(`Buscando "Python":`, ContienePalabra(frase, "Python")); 
+
+        console.log(`Buscando "JavaScript":`, ContienePalabra(frase, "JavaScript")); 
+    
+        console.log(`Buscando "javascript":`, ContienePalabra(frase, "javascript"));
+      </script>
+
+</head>
