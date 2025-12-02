@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4: Verificar subcadena</title>
+    <style>
+        .fondo-rojo {
+            background-color: #ffdddd;
+            color: #cc0000;
+            padding: 10px;
+            border: 1px solid #cc0000;
+        }
+        .fondo-verde {
+            background-color: #ddffdd;
+            color: #00cc00;
+            padding: 10px;
+            border: 1px solid #00cc00;
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Ejercicio 4: Verificar subcadena</h3>
+
+    <label for="texto4">Texto principal:</label>
+    <input type="text" id="texto4" value="Mi perro es muy rápido" style="width: 250px;"><br><br>
+
+    <label for="palabra4">Palabra a buscar:</label>
+    <input type="text" id="palabra4" value="rápido"><br><br>
+
+    <button onclick="verificarPalabra()">Verificar</button>
+    
+    <hr>
+
+    <div id="resultado4" style="margin-top: 15px;">
+        </div>
+
+    <script> 
+        const verificarPalabra = () => {
+            const texto = document.getElementById("texto4").value;
+            const palabra = document.getElementById("palabra4").value;
+            const divResultado = document.getElementById("resultado4");
+            
+            divResultado.textContent = `Buscando '${palabra}' en '${texto}'...`;
+            divResultado.classList.remove('fondo-rojo', 'fondo-verde');
+
+            if (texto.includes(palabra)) {
+                divResultado.classList.add('fondo-verde');
+                divResultado.textContent += " -> Palabra encontrada";
+            } else {
+                divResultado.classList.add('fondo-rojo');
+                divResultado.textContent += " -> La palabra no existe.";
+            }
+        };
+    </script>
+</body>
+</html>

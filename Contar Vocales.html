@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8: Contar vocales y cambiar tamaño</title>
+</head>
+<body>
+    
+    <h3>Ejercicio 8: Contar vocales y cambiar tamaño</h3>
+
+    <label for="input8">Escribe una frase:</label>
+    <input type="text" id="input8" value="La programación es fácil" style="width: 300px;"><br><br>
+
+    <button onclick="ejercicio8()">Contar Vocales</button>
+    
+    <hr>
+
+    <h3>Resultado:</h3>
+    <p id="resultado8" style="font-size: 16px;">
+        </p>
+
+    <script>
+        function ejercicio8() {
+            const textoInput = document.getElementById("input8").value;
+            const pResultado = document.getElementById("resultado8");
+            
+            pResultado.textContent = textoInput;     
+            
+            const texto = pResultado.textContent.toLowerCase();
+            const vocalesEncontradas = texto.match(/[aeiouáéíóú]/g);
+            const numVocales = vocalesEncontradas ? vocalesEncontradas.length : 0;
+            
+            pResultado.textContent = `"${textoInput}" tiene ${numVocales} vocales.`;
+            
+            const nuevoTamano = 16 + numVocales; 
+            pResultado.style.fontSize = `${nuevoTamano}px`;
+            pResultado.style.color = 'darkgreen'; 
+        }
+    </script>
+</body>
+</html>

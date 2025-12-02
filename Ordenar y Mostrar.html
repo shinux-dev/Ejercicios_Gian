@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10: Ordenar, unir y mostrarlo</title>
+    <style>
+        .alternar-clase {
+            background-color: #f0f8ff;
+            border: 2px dashed blue;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Ejercicio 10: Ordenar, unir y mostrarlo</h3>
+
+    <label for="input10">Ingresa palabras o nombres separados por comas:</label>
+    <input type="text" id="input10" value="manzana, banana, kiwi, durazno, cereza" style="width: 350px;"><br><br>
+
+    <button onclick="ejercicio10()">Ordenar y Mostrar</button>
+    
+    <hr>
+
+    <h3>Resultado:</h3>
+    <div id="resultado10" style="border: 1px solid #ccc; padding: 10px; min-height: 20px;">
+        Aquí se mostrará el array ordenado.
+    </div>
+
+    <script>
+        function ejercicio10() {
+            const inputTexto = document.getElementById("input10").value;
+            const datosArray = inputTexto.split(',').map(str => str.trim()).filter(str => str.length > 0);
+            
+            const arrayOrdenado = datosArray.sort(); 
+            
+            const resultadoUnido = arrayOrdenado.join(' - ');
+            
+            const divResultado = document.getElementById("resultado10");
+            
+            divResultado.textContent = `Array original: [${datosArray.join(', ')}] Ordenado y Unido: ` + resultadoUnido;
+            
+            divResultado.classList.toggle('alternar-clase');
+
+        }
+    </script>
+</body>
+</html>

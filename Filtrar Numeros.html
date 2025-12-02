@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Filtrar números y crear elementos en el DOM</title>
+</head>
+<body>
+    
+    <h3>Ingresa números separados por comas:</h3>
+    <input type="text" id="a" placeholder="Ej: 1, 4, 7, 10, 2">
+    
+    <button onclick="l()">Filtrar Pares</button>
+    
+    <hr>
+    
+    <h3>Números Pares:</h3>
+    <div id="r3" style="border: 1px solid black; padding: 10px; min-height: 20px;">
+    </div>
+
+    <script>
+        const l = () => {
+            const v = document.getElementById("a").value;
+            
+            const arr = v.split(',')
+                         .map(s => parseInt(s.trim()))
+                         .filter(n => !isNaN(n));
+
+            const p = arr.filter(n => n % 2 === 0);
+
+            const d = document.getElementById("r3");
+            d.innerHTML = '';
+
+            if (p.length === 0) {
+                d.innerHTML = 'NADA';
+                return;
+            }
+
+            p.forEach(numero => {
+                const s = document.createElement('span'); 
+                s.textContent = numero;
+                s.style.display = 'inline-block';
+                s.style.margin = '5px';
+                s.style.padding = '3px 8px';
+                s.style.backgroundColor = '#ccc';
+                s.style.borderRadius = '3px';
+                d.appendChild(s); 
+            });
+        };
+    </script>
+</body>
+</html>

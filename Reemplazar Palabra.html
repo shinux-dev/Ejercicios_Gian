@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9: Reemplazar palabra</title>
+</head>
+<body>
+    
+    <h3>Ejercicio 9: Reemplazar palabra y mostrar resultado</h3>
+
+    <label for="texto9">Texto Original:</label><br>
+    <textarea id="texto9" rows="4" cols="50">El gato es un animal genial. Yo tengo un gato y me gusta mucho mi gato.</textarea><br><br>
+
+    <label for="buscar9">Palabra a buscar:</label>
+    <input type="text" id="buscar9" value="gato"><br><br>
+
+    <label for="reemplazar9">Reemplazar con:</label>
+    <input type="text" id="reemplazar9" value="perro"><br><br>
+
+    <button onclick="ejercicio9()">Reemplazar</button>
+    
+    <hr>
+
+    <h3>Resultados del Reemplazo:</h3>
+    <div id="contenedor9" style="border: 1px solid #ccc; padding: 10px; min-height: 50px;">
+    </div>
+
+    <script>
+        function ejercicio9() {
+            const textoOriginal = document.getElementById("texto9").value;
+            const buscar = document.getElementById("buscar9").value;
+            const reemplazar = document.getElementById("reemplazar9").value;
+            const nuevoTexto = textoOriginal.replace(new RegExp(buscar, 'g'), reemplazar);
+            const divContenedor = document.getElementById("contenedor9");
+            const pNuevo = document.createElement('p');
+            pNuevo.textContent = `Resultado: ${nuevoTexto}`;
+            divContenedor.appendChild(pNuevo);
+        }
+    </script>
+</body>
+</html>

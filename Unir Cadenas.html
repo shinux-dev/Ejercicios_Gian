@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5: Unir cadenas y agregar clase</title>
+    <style>
+        .resaltado {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: blue;
+            border: 2px solid lightblue;
+            padding: 10px;
+            margin-top: 15px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Ejercicio 5: Unir cadenas</h3>
+
+    <label for="cadena5_1">Primera Cadena:</label>
+    <input type="text" id="cadena5_1" value="Hola"><br><br>
+
+    <label for="cadena5_2">Segunda Cadena:</label>
+    <input type="text" id="cadena5_2" value="Mundo"><br><br>
+
+    <button onclick="ejercicio5()">Unir y Mostrar</button>
+    
+    <hr>
+
+    <h3>Resultado:</h3>
+    <p id="resultado5"></p> 
+
+    <script> 
+        function ejercicio5() {
+            const cadena1 = document.getElementById("cadena5_1").value;
+            const cadena2 = document.getElementById("cadena5_2").value;
+            const cadenaUnida = cadena1 + " " + cadena2;
+            const resultadoMayusculas = cadenaUnida.toUpperCase();
+            const pResultado = document.getElementById("resultado5");
+            pResultado.textContent = resultadoMayusculas;
+            pResultado.classList.add("resaltado");
+        }
+    </script>
+</body>
+</html>

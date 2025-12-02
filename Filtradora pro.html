@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7: Filtrar + mayúsculas + crear elementos</title>
+</head>
+<body>
+    
+    <h3>Ejercicio 7: Filtrar + Mayúsculas</h3>
+
+    <label for="input7">Ingresa palabras separadas por comas:</label>
+    <input type="text" id="input7" value="casa, perro, elefante, sol, agua, arboles" style="width: 300px;"><br><br>
+
+    <button onclick="ejercicio7()">Filtrar Palabras</button>
+    
+    <hr>
+
+    <h3>Resultado:</h3>
+    <div id="resultado7" style="border: 1px solid #ccc; padding: 10px; min-height: 50px;">
+    </div>
+
+    <script>
+            const inputTexto = document.getElementById("input7").value;
+            const datosArray = inputTexto.split(',').map(str => str.trim());
+            const divResultado = document.getElementById("resultado7");
+            divResultado.innerHTML = '';
+            const palabrasFiltradas = datosArray.filter(palabra => palabra.length > 4);
+            const palabrasMayusculas = palabrasFiltradas.map(palabra => palabra.toUpperCase());
+            const pHeader = document.createElement('p');
+            pHeader.innerHTML = `<strong>Palabras originales:</strong> ${datosArray.join(', ')}`;
+            divResultado.appendChild(pHeader);
+
+            palabrasMayusculas.forEach(palabra => {
+                const pNuevo = document.createElement('p');
+                pNuevo.textContent = `Filtrada y en MAYÚSCULAS: ${palabra}`;
+                divResultado.appendChild(pNuevo);
+            });
+        
+    </script>
+</body>
+</html>

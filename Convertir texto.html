@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformación de Texto con innerHTML</title>
+</head>
+<body>
+
+    <h2>✏️ Demostración de innerHTML</h2>
+
+    <label for="textoInput">Ingresá el texto a transformar:</label>
+    <input type="text" id="textoInput" placeholder="Escribí aquí...">
+    <button onclick="TransText()">Mostrar Transformación</button>
+    
+    <div id="resultado2">Esperando el texto...</div>
+
+    <script>
+        const TransText = () => {
+            
+            const textoOriginal = document.getElementById("textoInput").value;
+            
+            const textoHTML = `El texto ahora es un título: <h1>${textoOriginal}</h1>`;
+            
+            const elementoDiv = document.getElementById("resultado2");
+            
+            elementoDiv.innerHTML = textoHTML; 
+        };
+    </script>
+
+</body>
+</html>

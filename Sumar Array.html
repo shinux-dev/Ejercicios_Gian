@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6: Sumar array</title>
+</head>
+<body>
+    
+    <h3>Ejercicio 6: Sumar array</h3>
+
+    <label for="input6">Ingresa números separados por comas:</label>
+    <input type="text" id="input6" value="10, 5, 20, 15"><br><br>
+
+    <button onclick="ejercicio6()">Calcular Suma</button>
+    
+    <hr>
+
+    <h3>Resultado de la Suma:</h3>
+    <div id="resultado6" style="border: 1px solid #ccc; padding: 10px; min-height: 20px;">
+    </div>
+
+    <script> 
+        function ejercicio6() {
+            const inputTexto = document.getElementById("input6").value;
+            const datosArray = inputTexto.split(',').map(str => parseInt(str.trim())).filter(num => !isNaN(num));
+            const suma = datosArray.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+            const divResultado = document.getElementById("resultado6");
+            divResultado.innerHTML = `Array: [${datosArray.join(', ')}]<br>La suma total es: <strong>${suma}</strong>`;
+        }
+    </script>
+</body>
+</html>
